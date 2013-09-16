@@ -4,6 +4,8 @@
 package TFC;
 
 import java.io.File;
+import java.util.Arrays;
+import java.util.HashSet;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Configuration;
@@ -297,6 +299,17 @@ public class TerraFirmaCraft
 		TFCOptions.HealthGainRate = TFCOptions.getIntFor(config,"Player","HealthGainRate", 20, "The rate of Health Gain per experience level. Set to 0 to turn off.");
 		TFCOptions.HealthGainCap = TFCOptions.getIntFor(config,"Player","HealthGainCap", 3000, "The maximum achievable health pool total.");
 
+		int[] snowBlackList = {};
+		snowBlackList = TFCOptions.getIntArrayFor(config, "General", "snowBlackList", snowBlackList, "All blockids that snow WILL NOT fall on.");
+		
+		TFCOptions.snowBlackList = new HashSet<Integer>();
+		
+		
+		for(int value : snowBlackList)
+		{
+			TFCOptions.snowBlackList.add(value);
+		}
+		
 		/**Always end with this*/
 		if (config != null) {
 			config.save();

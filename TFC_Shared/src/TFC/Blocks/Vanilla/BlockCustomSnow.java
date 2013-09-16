@@ -2,6 +2,7 @@ package TFC.Blocks.Vanilla;
 
 import java.io.Console;
 import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -15,6 +16,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import TFC.Reference;
 import TFC.TFCBlocks;
+import TFC.API.TFCOptions;
 import TFC.Blocks.BlockTerra;
 import TFC.Core.TFC_Climate;
 
@@ -31,6 +33,9 @@ public class BlockCustomSnow extends BlockTerra
 	public boolean canPlaceBlockAt(World par1World, int par2, int par3, int par4)
 	{
 		int var5 = par1World.getBlockId(par2, par3 - 1, par4);
+		
+		if(TFCOptions.snowBlackList.contains(var5))
+			return false;
 		if (var5 == Block.ice.blockID
 				|| var5 != TFCBlocks.LooseRock.blockID
 				|| var5 == Block.leaves.blockID

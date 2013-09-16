@@ -1,5 +1,7 @@
 package TFC.API;
 
+import java.util.Set;
+
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.Property;
 
@@ -41,6 +43,8 @@ public class TFCOptions
 	public static byte[] anvilRuleColor2 = {(byte) 247, (byte) 148, (byte) 49, (byte) 255};
 
 	public static int pitKilnBurnTime = 8;
+	
+	public static Set<Integer> snowBlackList;
 
 	public static boolean getBooleanFor(Configuration config,String heading, String item, boolean value)
 	{
@@ -110,5 +114,23 @@ public class TFCOptions
 		{
 			System.out.println(new StringBuilder().append("[TFC] Error while trying to add Integer, config wasn't loaded properly!").toString());
 		}return value;
+	}
+	
+	public static int[] getIntArrayFor(Configuration config,String heading, String item, int[] value, String comment)
+	{
+		if (config == null)
+		{
+			return value;
+		}
+		try
+		{
+			Property prop = config.get(heading, item, value);
+			prop.comment = comment;
+			return prop.getIntList();
+		}
+		catch (Exception e)
+		{
+			System.out.println(new StringBuilder().append("[TFC] Error while trying to add Integer, config wasn't loaded properly!").toString());
+		}return value;	
 	}
 }
