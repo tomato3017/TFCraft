@@ -3,6 +3,7 @@ package TFC.Items;
 import java.util.List;
 
 import TFC.TFCBlocks;
+import TFC.API.TFCTabs;
 import TFC.API.Enums.EnumSize;
 import TFC.API.Enums.EnumWeight;
 import TFC.API.Util.Helper;
@@ -45,7 +46,7 @@ public class ItemMetalSheet2x extends ItemMetalSheet
 	{
 		super(i);
 		setMaxDamage(0);
-		this.setCreativeTab(CreativeTabs.tabMaterials);
+		this.setCreativeTab(TFCTabs.TFCMaterials);
 	}
 
 	@Override
