@@ -3,17 +3,43 @@ package TFC.Blocks.Vanilla;
 import java.util.Random;
 
 import TFC.TFCBlocks;
+import TFC.API.TFCOptions;
+import TFC.Core.TFC_Climate;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockIce;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.Chunk;
 
 public class BlockCustomIce extends BlockIce
 {
     public BlockCustomIce(int par1)
     {
         super(par1);
+    }
+    
+    private void quickUnfreeze(World world, Chunk chunk)
+    {
+    	if(!world.isRemote)
+    	{
+    		int chunkX = chunk.xPosition << 4;
+    		int chunkZ = chunk.zPosition << 4;
+    	
+    		for(int x = chunkX; x < (chunkX + 16); x++)
+    		{
+    			for(int z = chunkZ; z < (chunkZ + 16); z++)
+    			{
+    				int height = world.getHeightValue(x,z) - 1;
+    				
+    				if(world.getBlockId(x, height, z) == Block.ice.blockID)
+    				{
+    					world.setBlock(x, height, z, Block.waterStill.blockID);
+    				}
+    			}
+    		}
+    		
+    	}
     }
 
     /**
@@ -58,6 +84,9 @@ public class BlockCustomIce extends BlockIce
             } else {
             	world.setBlock(i, j, k, Block.waterStill.blockID, 0, 2);
             }
+            
+            if(TFC_Climate.getHeightAdjustedTemp(i, j, k) >= TFCOptions.quickUnfreezeTemp)
+            	quickUnfreeze(world, world.getChunkFromBlockCoords(i, k));
         }
     }
 }

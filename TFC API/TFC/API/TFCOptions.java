@@ -44,6 +44,7 @@ public class TFCOptions
 
 	public static int pitKilnBurnTime = 8;
 	
+	public static float quickUnfreezeTemp = 5.0f;
 	public static Set<Integer> snowBlackList;
 
 	public static boolean getBooleanFor(Configuration config,String heading, String item, boolean value)
@@ -131,6 +132,24 @@ public class TFCOptions
 		catch (Exception e)
 		{
 			System.out.println(new StringBuilder().append("[TFC] Error while trying to add Integer, config wasn't loaded properly!").toString());
+		}return value;	
+	}
+
+	public static double getDoubleFor(Configuration config, String heading, String item, float value, String comment) 
+	{
+		if (config == null)
+		{
+			return value;
+		}
+		try
+		{
+			Property prop = config.get(heading, item, value);
+			prop.comment = comment;
+			return prop.getDouble(value);
+		}
+		catch (Exception e)
+		{
+			System.out.println(new StringBuilder().append("[TFC] Error while trying to add Double, config wasn't loaded properly!").toString());
 		}return value;	
 	}
 }

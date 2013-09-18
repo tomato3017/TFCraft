@@ -14,6 +14,7 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.EnumSkyBlock;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.Chunk;
 import TFC.Reference;
 import TFC.TFCBlocks;
 import TFC.API.TFCOptions;
@@ -27,6 +28,29 @@ public class BlockCustomSnow extends BlockTerra
 		super(par1, Material.snow);
 		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.125F, 1.0F);
 		this.setTickRandomly(true);
+	}
+	
+	private void quickUnfreeze(World world, Chunk chunk)
+	{
+		if(!world.isRemote)
+		{
+			int chunkX = chunk.xPosition << 4;
+			int chunkZ = chunk.zPosition << 4;
+		
+			for(int x = chunkX; x < (chunkX + 16); x++)
+			{
+				for(int z = chunkZ; z < (chunkZ + 16); z++)
+				{
+					int height = world.getHeightValue(x,z) - 1;
+					
+					if(world.getBlockId(x, height, z) == Block.snow.blockID)
+					{
+						world.setBlockToAir(x, height, z);
+					}
+				}
+			}
+			
+		}
 	}
 
 	@Override
@@ -201,6 +225,11 @@ public class BlockCustomSnow extends BlockTerra
 				par1World.setBlockToAir(par2, par3, par4);
 			}
 		}
+		
+		//Way above freezing
+		if(TFC_Climate.getHeightAdjustedTemp(par2, par3, par4) >= TFCOptions.quickUnfreezeTemp)
+			quickUnfreeze(par1World, par1World.getChunkFromBlockCoords(par2, par4));
+		
 //		else//Below Freezing
 //		{
 //		    if(meta > 1 && par5Random.nextInt(5) == 0)
@@ -213,6 +242,8 @@ public class BlockCustomSnow extends BlockTerra
 //          }
 //		}
 	}
+	
+
 	
 	@Override
     public void registerIcons(IconRegister registerer)

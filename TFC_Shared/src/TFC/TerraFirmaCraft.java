@@ -299,6 +299,8 @@ public class TerraFirmaCraft
 		TFCOptions.HealthGainRate = TFCOptions.getIntFor(config,"Player","HealthGainRate", 20, "The rate of Health Gain per experience level. Set to 0 to turn off.");
 		TFCOptions.HealthGainCap = TFCOptions.getIntFor(config,"Player","HealthGainCap", 3000, "The maximum achievable health pool total.");
 
+		TFCOptions.quickUnfreezeTemp = (float) TFCOptions.getDoubleFor(config, "General", "quickUnfreezeTemp", TFCOptions.quickUnfreezeTemp, "The temprature that snow and ice start melting by chunk");
+		
 		int[] snowBlackList = {};
 		snowBlackList = TFCOptions.getIntArrayFor(config, "General", "snowBlackList", snowBlackList, "All blockids that snow WILL NOT fall on.");
 		
