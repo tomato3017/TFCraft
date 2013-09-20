@@ -58,13 +58,16 @@ public class BlockCustomSnow extends BlockTerra
 	{
 		int var5 = par1World.getBlockId(par2, par3 - 1, par4);
 		
-		if(TFCOptions.snowBlackList.contains(var5))
-			return false;
-		if (var5 == Block.ice.blockID
+		//if(TFCOptions.snowBlackList.contains(var5))
+		//	return false;
+		
+		if (var5 == Block.leaves.blockID || par1World.doesBlockHaveSolidTopSurface(par2, par3 - 1, par4))
+			return true;
+/*		if (var5 == Block.ice.blockID
 				|| var5 != TFCBlocks.LooseRock.blockID
 				|| var5 == Block.leaves.blockID
 				|| Block.blocksList[var5].isOpaqueCube())
-			return true;
+			return true;*/
 		return false;
 	}
 	

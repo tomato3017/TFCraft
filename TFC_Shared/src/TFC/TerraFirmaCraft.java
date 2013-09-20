@@ -301,16 +301,16 @@ public class TerraFirmaCraft
 
 		TFCOptions.quickUnfreezeTemp = (float) TFCOptions.getDoubleFor(config, "General", "quickUnfreezeTemp", TFCOptions.quickUnfreezeTemp, "The temprature that snow and ice start melting by chunk");
 		
-		int[] snowBlackList = {};
-		snowBlackList = TFCOptions.getIntArrayFor(config, "General", "snowBlackList", snowBlackList, "All blockids that snow WILL NOT fall on.");
+		//int[] snowBlackList = {};
+		//snowBlackList = TFCOptions.getIntArrayFor(config, "General", "snowBlackList", snowBlackList, "All blockids that snow WILL NOT fall on.");
 		
-		TFCOptions.snowBlackList = new HashSet<Integer>();
+		//TFCOptions.snowBlackList = new HashSet<Integer>();
 		
 		
-		for(int value : snowBlackList)
-		{
-			TFCOptions.snowBlackList.add(value);
-		}
+		//for(int value : snowBlackList)
+		//{
+		//	TFCOptions.snowBlackList.add(value);
+		//}
 		
 		/**Always end with this*/
 		if (config != null) {

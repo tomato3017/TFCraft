@@ -45,7 +45,7 @@ public class TFCOptions
 	public static int pitKilnBurnTime = 8;
 	
 	public static float quickUnfreezeTemp = 5.0f;
-	public static Set<Integer> snowBlackList;
+	//public static Set<Integer> snowBlackList;
 
 	public static boolean getBooleanFor(Configuration config,String heading, String item, boolean value)
 	{
