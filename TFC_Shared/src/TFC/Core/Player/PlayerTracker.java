@@ -7,6 +7,7 @@ import net.minecraft.potion.PotionEffect;
 import TFC.Reference;
 import TFC.Core.TFC_Core;
 import TFC.Food.FoodStatsTFC;
+import TFC.Tomatomod.TModRef;
 import cpw.mods.fml.common.IPlayerTracker;
 
 public class PlayerTracker implements IPlayerTracker
@@ -15,7 +16,7 @@ public class PlayerTracker implements IPlayerTracker
 	@Override
 	public void onPlayerLogin(EntityPlayer player) {
 		
-		player.addChatMessage(Reference.ModdedMessage);
+		player.addChatMessage("This server is running " + TModRef.getModMessage());
 	}
 
 	@Override

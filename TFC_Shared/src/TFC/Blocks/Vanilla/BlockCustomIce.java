@@ -5,6 +5,7 @@ import java.util.Random;
 import TFC.TFCBlocks;
 import TFC.API.TFCOptions;
 import TFC.Core.TFC_Climate;
+import TFC.Tomatomod.TModOptions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockIce;
 import net.minecraft.block.material.Material;
@@ -85,7 +86,7 @@ public class BlockCustomIce extends BlockIce
             	world.setBlock(i, j, k, Block.waterStill.blockID, 0, 2);
             }
             
-            if(TFC_Climate.getHeightAdjustedTemp(i, j, k) >= TFCOptions.quickUnfreezeTemp)
+            if(TFC_Climate.getHeightAdjustedTemp(i, j, k) >= TModOptions.quickSnowUnfreezeTemp)
             	quickUnfreeze(world, world.getChunkFromBlockCoords(i, k));
         }
     }

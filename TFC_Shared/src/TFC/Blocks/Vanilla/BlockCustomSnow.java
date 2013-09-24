@@ -20,6 +20,7 @@ import TFC.TFCBlocks;
 import TFC.API.TFCOptions;
 import TFC.Blocks.BlockTerra;
 import TFC.Core.TFC_Climate;
+import TFC.Tomatomod.TModOptions;
 
 public class BlockCustomSnow extends BlockTerra
 {
@@ -62,11 +63,7 @@ public class BlockCustomSnow extends BlockTerra
 		
 		if (var5 == Block.leaves.blockID || var5 == Block.ice.blockID || (Block.blocksList[var5].isOpaqueCube() && par1World.doesBlockHaveSolidTopSurface(par2, par3 - 1, par4)))
 			return true;
-/*		if (var5 == Block.ice.blockID
-				|| var5 != TFCBlocks.LooseRock.blockID
-				|| var5 == Block.leaves.blockID
-				|| Block.blocksList[var5].isOpaqueCube())
-			return true;*/
+
 		return false;
 	}
 	
@@ -229,7 +226,7 @@ public class BlockCustomSnow extends BlockTerra
 		}
 		
 		//Way above freezing
-		if(TFC_Climate.getHeightAdjustedTemp(par2, par3, par4) >= TFCOptions.quickUnfreezeTemp)
+		if(TFC_Climate.getHeightAdjustedTemp(par2, par3, par4) >= TModOptions.quickSnowUnfreezeTemp)
 			quickUnfreeze(par1World, par1World.getChunkFromBlockCoords(par2, par4));
 		
 //		else//Below Freezing

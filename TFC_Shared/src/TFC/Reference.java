@@ -18,5 +18,4 @@ public class Reference
 
 	public static final String AssetPath = "/assets/" + ModID + "/";
 	public static final String AssetPathGui = "textures/gui/";
-	public static final String ModdedMessage = "This server is running TFC v" + ModVersion + "-tomatomod";
 }
