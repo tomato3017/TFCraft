@@ -31,5 +31,7 @@ public class TModOptions
 		quickSnowUnfreeze = config.get("general", "QuickSnowUnfreeze", quickSnowUnfreeze).getBoolean(quickSnowUnfreeze);
 		quickSnowUnfreezeTemp = (float) config.get("parameters", "QuickSnowUnfreezeTemp", (double) quickSnowUnfreezeTemp)
 												.getDouble((double) quickSnowUnfreezeTemp);
+		
+		if(config != null) config.save();
 	}
 }
