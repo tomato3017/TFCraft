@@ -29,6 +29,7 @@ import TFC.Core.TFC_Textures;
 import TFC.Items.ItemBarrels;
 import TFC.TileEntities.NetworkTileEntity;
 import TFC.TileEntities.TileEntityBarrel;
+import TFC.Tomatomod.TModOptions;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -207,7 +208,7 @@ public class BlockBarrel extends BlockTerraContainer
 		if (par1World.isBlockIndirectlyGettingPowered(par2, par3, par4))
 		{
 			TileEntityBarrel TE = (TileEntityBarrel)par1World.getBlockTileEntity(par2,par3,par4);
-			if(TE.liquidLevel == 256 && TE.Type == 4 && !TE.getSealed()){
+			if((TE.liquidLevel == 256 || (TE.liquidLevel >= 128 && TModOptions.cheapPowderKegRecipe)) && TE.Type == 4 && !TE.getSealed()){
 				TE.setSealed();
 				BarrelEntity BE = new BarrelEntity(par1World,par2,par3,par4);
 				par1World.spawnEntityInWorld(BE);

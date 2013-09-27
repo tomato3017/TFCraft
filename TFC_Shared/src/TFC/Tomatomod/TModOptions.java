@@ -10,9 +10,10 @@ public class TModOptions
 	
 	//True/False settings
 	public static boolean quickSnowUnfreeze = true;
+	public static boolean cheapPowderKegRecipe = true; 
 	
 	//Parameters
-	public static float quickSnowUnfreezeTemp = 5.0F; 
+	public static float quickSnowUnfreezeTemp = 5.0F;
 	
 	public static void load()
 	{
@@ -31,6 +32,9 @@ public class TModOptions
 		quickSnowUnfreeze = config.get("general", "QuickSnowUnfreeze", quickSnowUnfreeze).getBoolean(quickSnowUnfreeze);
 		quickSnowUnfreezeTemp = (float) config.get("parameters", "QuickSnowUnfreezeTemp", (double) quickSnowUnfreezeTemp)
 												.getDouble((double) quickSnowUnfreezeTemp);
+		
+		cheapPowderKegRecipe = config.get("general", "CheapPowderKegRecipe", cheapPowderKegRecipe, "Only requires 128 gunpowder if enabled")
+									 .getBoolean(cheapPowderKegRecipe);
 		
 		if(config != null) config.save();
 	}
