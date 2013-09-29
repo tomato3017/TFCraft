@@ -86,7 +86,7 @@ public class BlockCustomIce extends BlockIce
             	world.setBlock(i, j, k, Block.waterStill.blockID, 0, 2);
             }
             
-            if(TFC_Climate.getHeightAdjustedTemp(i, j, k) >= TModOptions.quickSnowUnfreezeTemp)
+            if(TFC_Climate.getHeightAdjustedTemp(i, j, k) >= TModOptions.quickSnowUnfreezeTemp && TModOptions.quickSnowUnfreeze)
             	quickUnfreeze(world, world.getChunkFromBlockCoords(i, k));
         }
     }

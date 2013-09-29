@@ -226,7 +226,7 @@ public class BlockCustomSnow extends BlockTerra
 		}
 		
 		//Way above freezing
-		if(TFC_Climate.getHeightAdjustedTemp(par2, par3, par4) >= TModOptions.quickSnowUnfreezeTemp)
+		if(TFC_Climate.getHeightAdjustedTemp(par2, par3, par4) >= TModOptions.quickSnowUnfreezeTemp && TModOptions.quickSnowUnfreeze)
 			quickUnfreeze(par1World, par1World.getChunkFromBlockCoords(par2, par4));
 		
 //		else//Below Freezing
