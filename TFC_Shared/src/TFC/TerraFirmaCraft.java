@@ -43,6 +43,7 @@ import TFC.Handlers.PlayerTossEventHandler;
 import TFC.Handlers.ServerTickHandler;
 import TFC.Handlers.Client.ClientTickHandler;
 import TFC.Tomatomod.TModOptions;
+import TFC.Tomatomod.Tomatomod;
 import TFC.WorldGen.TFCProvider;
 import TFC.WorldGen.TFCProviderHell;
 import TFC.WorldGen.TFCWorldType;
@@ -91,7 +92,7 @@ public class TerraFirmaCraft
 		loadSettings();
 		
 		//By TomatoMod
-		TModOptions.load();
+		Tomatomod.preInit(event);
 		
 		TickRegistry.registerTickHandler(new ServerTickHandler(), Side.SERVER);
 		TickRegistry.registerTickHandler(new ClientTickHandler(), Side.CLIENT);
@@ -232,6 +233,8 @@ public class TerraFirmaCraft
 				new ItemStack(TFCItems.WoodenBucketWater), new ItemStack(TFCItems.WoodenBucketEmpty)));
 
 		TFC_Climate.initCache();
+		
+		Tomatomod.init(evt);
 	}
 
 	@EventHandler
