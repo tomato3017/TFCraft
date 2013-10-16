@@ -11,6 +11,7 @@ public class TModOptions
 	//True/False settings
 	public static boolean quickSnowUnfreeze = true;
 	public static boolean cheapPowderKegRecipe = true; 
+	public static boolean allowSluiceGems = false;
 	
 	//Parameters
 	public static float quickSnowUnfreezeTemp = 5.0F;
@@ -35,6 +36,8 @@ public class TModOptions
 		
 		cheapPowderKegRecipe = config.get("general", "CheapPowderKegRecipe", cheapPowderKegRecipe, "Only requires 128 gunpowder if enabled")
 									 .getBoolean(cheapPowderKegRecipe);
+		allowSluiceGems = config.get("general", "AllowSluiceGems", allowSluiceGems, "If disabled, gems will not spawn on sluices")
+								.getBoolean(allowSluiceGems);
 		
 		if(config != null) config.save();
 	}
