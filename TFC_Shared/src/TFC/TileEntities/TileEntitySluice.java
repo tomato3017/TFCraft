@@ -10,6 +10,7 @@ import TFC.*;
 import TFC.Blocks.Devices.BlockSluice;
 import TFC.Blocks.Terrain.BlockOre;
 import TFC.Items.ItemOre1;
+import TFC.Tomatomod.TModOptions;
 import TFC.Core.TFC_Time;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -369,114 +370,117 @@ public class TileEntitySluice extends TileEntity implements IInventory
                     {
                         addToInventory(coreSampleStacks.get(random.nextInt(coreSampleStacks.size())).copy());
                     }
-                    else if(random.nextInt((int) (400*gemMod)) == 0)
+                    else if(TModOptions.allowSluiceGems)
                     {
-
-                        items.add(new ItemStack(TFCItems.GemAgate,1,0));
-                        items.add(new ItemStack(TFCItems.GemAmethyst,1,0));
-                        items.add(new ItemStack(TFCItems.GemBeryl,1,0));
-                        items.add(new ItemStack(TFCItems.GemEmerald,1,0));
-                        items.add(new ItemStack(TFCItems.GemGarnet,1,0));
-                        items.add(new ItemStack(TFCItems.GemJade,1,0));
-                        items.add(new ItemStack(TFCItems.GemJasper,1,0));
-                        items.add(new ItemStack(TFCItems.GemOpal,1,0));
-                        items.add(new ItemStack(TFCItems.GemRuby,1,0));
-                        items.add(new ItemStack(TFCItems.GemSapphire,1,0));
-                        items.add(new ItemStack(TFCItems.GemTourmaline,1,0));
-                        items.add(new ItemStack(TFCItems.GemTopaz,1,0));
-
-                        addToInventory((ItemStack)items.toArray()[random.nextInt(items.toArray().length)]);
-
-                    }
-                    else if(random.nextInt((int) (800*gemMod)) == 0)
-                    {
-                        items.add(new ItemStack(TFCItems.GemAgate,1,1));
-                        items.add(new ItemStack(TFCItems.GemAmethyst,1,1));
-                        items.add(new ItemStack(TFCItems.GemBeryl,1,1));
-                        items.add(new ItemStack(TFCItems.GemEmerald,1,1));
-                        items.add(new ItemStack(TFCItems.GemGarnet,1,1));
-                        items.add(new ItemStack(TFCItems.GemJade,1,1));
-                        items.add(new ItemStack(TFCItems.GemJasper,1,1));
-                        items.add(new ItemStack(TFCItems.GemOpal,1,1));
-                        items.add(new ItemStack(TFCItems.GemRuby,1,1));
-                        items.add(new ItemStack(TFCItems.GemSapphire,1,1));
-                        items.add(new ItemStack(TFCItems.GemTourmaline,1,1));
-                        items.add(new ItemStack(TFCItems.GemTopaz,1,1));
-
-                        addToInventory((ItemStack)items.toArray()[random.nextInt(items.toArray().length)]);
-                    }
-                    else if(random.nextInt((int) (1600*gemMod)) == 0)
-                    {
-                        items.add(new ItemStack(TFCItems.GemAgate,1,2));
-                        items.add(new ItemStack(TFCItems.GemAmethyst,1,2));
-                        items.add(new ItemStack(TFCItems.GemBeryl,1,2));
-                        items.add(new ItemStack(TFCItems.GemEmerald,1,2));
-                        items.add(new ItemStack(TFCItems.GemGarnet,1,2));
-                        items.add(new ItemStack(TFCItems.GemJade,1,2));
-                        items.add(new ItemStack(TFCItems.GemJasper,1,2));
-                        items.add(new ItemStack(TFCItems.GemOpal,1,2));
-                        items.add(new ItemStack(TFCItems.GemRuby,1,2));
-                        items.add(new ItemStack(TFCItems.GemSapphire,1,2));
-                        items.add(new ItemStack(TFCItems.GemTourmaline,1,2));
-                        items.add(new ItemStack(TFCItems.GemTopaz,1,2));
-
-                        addToInventory((ItemStack)items.toArray()[random.nextInt(items.toArray().length)]);
-                    }
-                    else if(random.nextInt((int) (3200*gemMod)) == 0)
-                    {
-                        items.add(new ItemStack(TFCItems.GemAgate,1,3));
-                        items.add(new ItemStack(TFCItems.GemAmethyst,1,3));
-                        items.add(new ItemStack(TFCItems.GemBeryl,1,3));
-                        items.add(new ItemStack(TFCItems.GemEmerald,1,3));
-                        items.add(new ItemStack(TFCItems.GemGarnet,1,3));
-                        items.add(new ItemStack(TFCItems.GemJade,1,3));
-                        items.add(new ItemStack(TFCItems.GemJasper,1,3));
-                        items.add(new ItemStack(TFCItems.GemOpal,1,3));
-                        items.add(new ItemStack(TFCItems.GemRuby,1,3));
-                        items.add(new ItemStack(TFCItems.GemSapphire,1,3));
-                        items.add(new ItemStack(TFCItems.GemTourmaline,1,3));
-                        items.add(new ItemStack(TFCItems.GemTopaz,1,3));
-
-                        addToInventory((ItemStack)items.toArray()[random.nextInt(items.toArray().length)]);
-                    }
-                    else if(random.nextInt((int) (6400*gemMod)) == 0)
-                    {
-                        items.add(new ItemStack(TFCItems.GemAgate,1,4));
-                        items.add(new ItemStack(TFCItems.GemAmethyst,1,4));
-                        items.add(new ItemStack(TFCItems.GemBeryl,1,4));
-                        items.add(new ItemStack(TFCItems.GemEmerald,1,4));
-                        items.add(new ItemStack(TFCItems.GemGarnet,1,4));
-                        items.add(new ItemStack(TFCItems.GemJade,1,4));
-                        items.add(new ItemStack(TFCItems.GemJasper,1,4));
-                        items.add(new ItemStack(TFCItems.GemOpal,1,4));
-                        items.add(new ItemStack(TFCItems.GemRuby,1,4));
-                        items.add(new ItemStack(TFCItems.GemSapphire,1,4));
-                        items.add(new ItemStack(TFCItems.GemTourmaline,1,4));
-                        items.add(new ItemStack(TFCItems.GemTopaz,1,4));
-
-                        addToInventory((ItemStack)items.toArray()[random.nextInt(items.toArray().length)]);
-
-                    }
-                    else if(random.nextInt((int) (12800*gemMod)) == 0)
-                    {
-                        int r = random.nextInt(50);
-                        
-                        if(r == 0)
-                        {
-                            addToInventory(new ItemStack(TFCItems.GemDiamond,1,3));
-                        }
-                        else if(r < 15)
-                        {
-                            addToInventory(new ItemStack(TFCItems.GemDiamond,1,2));
-                        }
-                        else if(r < 25)
-                        {
-                            addToInventory(new ItemStack(TFCItems.GemDiamond,1,1));
-                        }
-                        else if(r < 50)
-                        {
-                            addToInventory(new ItemStack(TFCItems.GemDiamond,1,0));
-                        }
+	                    if(random.nextInt((int) (400*gemMod)) == 0)
+	                    {
+	
+	                        items.add(new ItemStack(TFCItems.GemAgate,1,0));
+	                        items.add(new ItemStack(TFCItems.GemAmethyst,1,0));
+	                        items.add(new ItemStack(TFCItems.GemBeryl,1,0));
+	                        items.add(new ItemStack(TFCItems.GemEmerald,1,0));
+	                        items.add(new ItemStack(TFCItems.GemGarnet,1,0));
+	                        items.add(new ItemStack(TFCItems.GemJade,1,0));
+	                        items.add(new ItemStack(TFCItems.GemJasper,1,0));
+	                        items.add(new ItemStack(TFCItems.GemOpal,1,0));
+	                        items.add(new ItemStack(TFCItems.GemRuby,1,0));
+	                        items.add(new ItemStack(TFCItems.GemSapphire,1,0));
+	                        items.add(new ItemStack(TFCItems.GemTourmaline,1,0));
+	                        items.add(new ItemStack(TFCItems.GemTopaz,1,0));
+	
+	                        addToInventory((ItemStack)items.toArray()[random.nextInt(items.toArray().length)]);
+	
+	                    }
+	                    else if(random.nextInt((int) (800*gemMod)) == 0)
+	                    {
+	                        items.add(new ItemStack(TFCItems.GemAgate,1,1));
+	                        items.add(new ItemStack(TFCItems.GemAmethyst,1,1));
+	                        items.add(new ItemStack(TFCItems.GemBeryl,1,1));
+	                        items.add(new ItemStack(TFCItems.GemEmerald,1,1));
+	                        items.add(new ItemStack(TFCItems.GemGarnet,1,1));
+	                        items.add(new ItemStack(TFCItems.GemJade,1,1));
+	                        items.add(new ItemStack(TFCItems.GemJasper,1,1));
+	                        items.add(new ItemStack(TFCItems.GemOpal,1,1));
+	                        items.add(new ItemStack(TFCItems.GemRuby,1,1));
+	                        items.add(new ItemStack(TFCItems.GemSapphire,1,1));
+	                        items.add(new ItemStack(TFCItems.GemTourmaline,1,1));
+	                        items.add(new ItemStack(TFCItems.GemTopaz,1,1));
+	
+	                        addToInventory((ItemStack)items.toArray()[random.nextInt(items.toArray().length)]);
+	                    }
+	                    else if(random.nextInt((int) (1600*gemMod)) == 0)
+	                    {
+	                        items.add(new ItemStack(TFCItems.GemAgate,1,2));
+	                        items.add(new ItemStack(TFCItems.GemAmethyst,1,2));
+	                        items.add(new ItemStack(TFCItems.GemBeryl,1,2));
+	                        items.add(new ItemStack(TFCItems.GemEmerald,1,2));
+	                        items.add(new ItemStack(TFCItems.GemGarnet,1,2));
+	                        items.add(new ItemStack(TFCItems.GemJade,1,2));
+	                        items.add(new ItemStack(TFCItems.GemJasper,1,2));
+	                        items.add(new ItemStack(TFCItems.GemOpal,1,2));
+	                        items.add(new ItemStack(TFCItems.GemRuby,1,2));
+	                        items.add(new ItemStack(TFCItems.GemSapphire,1,2));
+	                        items.add(new ItemStack(TFCItems.GemTourmaline,1,2));
+	                        items.add(new ItemStack(TFCItems.GemTopaz,1,2));
+	
+	                        addToInventory((ItemStack)items.toArray()[random.nextInt(items.toArray().length)]);
+	                    }
+	                    else if(random.nextInt((int) (3200*gemMod)) == 0)
+	                    {
+	                        items.add(new ItemStack(TFCItems.GemAgate,1,3));
+	                        items.add(new ItemStack(TFCItems.GemAmethyst,1,3));
+	                        items.add(new ItemStack(TFCItems.GemBeryl,1,3));
+	                        items.add(new ItemStack(TFCItems.GemEmerald,1,3));
+	                        items.add(new ItemStack(TFCItems.GemGarnet,1,3));
+	                        items.add(new ItemStack(TFCItems.GemJade,1,3));
+	                        items.add(new ItemStack(TFCItems.GemJasper,1,3));
+	                        items.add(new ItemStack(TFCItems.GemOpal,1,3));
+	                        items.add(new ItemStack(TFCItems.GemRuby,1,3));
+	                        items.add(new ItemStack(TFCItems.GemSapphire,1,3));
+	                        items.add(new ItemStack(TFCItems.GemTourmaline,1,3));
+	                        items.add(new ItemStack(TFCItems.GemTopaz,1,3));
+	
+	                        addToInventory((ItemStack)items.toArray()[random.nextInt(items.toArray().length)]);
+	                    }
+	                    else if(random.nextInt((int) (6400*gemMod)) == 0)
+	                    {
+	                        items.add(new ItemStack(TFCItems.GemAgate,1,4));
+	                        items.add(new ItemStack(TFCItems.GemAmethyst,1,4));
+	                        items.add(new ItemStack(TFCItems.GemBeryl,1,4));
+	                        items.add(new ItemStack(TFCItems.GemEmerald,1,4));
+	                        items.add(new ItemStack(TFCItems.GemGarnet,1,4));
+	                        items.add(new ItemStack(TFCItems.GemJade,1,4));
+	                        items.add(new ItemStack(TFCItems.GemJasper,1,4));
+	                        items.add(new ItemStack(TFCItems.GemOpal,1,4));
+	                        items.add(new ItemStack(TFCItems.GemRuby,1,4));
+	                        items.add(new ItemStack(TFCItems.GemSapphire,1,4));
+	                        items.add(new ItemStack(TFCItems.GemTourmaline,1,4));
+	                        items.add(new ItemStack(TFCItems.GemTopaz,1,4));
+	
+	                        addToInventory((ItemStack)items.toArray()[random.nextInt(items.toArray().length)]);
+	
+	                    }
+	                    else if(random.nextInt((int) (12800*gemMod)) == 0)
+	                    {
+	                        int r = random.nextInt(50);
+	                        
+	                        if(r == 0)
+	                        {
+	                            addToInventory(new ItemStack(TFCItems.GemDiamond,1,3));
+	                        }
+	                        else if(r < 15)
+	                        {
+	                            addToInventory(new ItemStack(TFCItems.GemDiamond,1,2));
+	                        }
+	                        else if(r < 25)
+	                        {
+	                            addToInventory(new ItemStack(TFCItems.GemDiamond,1,1));
+	                        }
+	                        else if(r < 50)
+	                        {
+	                            addToInventory(new ItemStack(TFCItems.GemDiamond,1,0));
+	                        }
+	                    }
                     }
                     processTimeRemaining -= 100;
                     soilAmount--;
