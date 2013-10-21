@@ -65,7 +65,7 @@ public class BlockCustomIce extends BlockIce
     @Override
 	public void updateTick(World world, int i, int j, int k, Random rand)
     {
-        if (!world.canBlockFreeze(i, j, k, false))
+        if (!world.canBlockFreeze(i, j, k, false) && TFC_Climate.getHeightAdjustedTemp(i, j, k) >= TModOptions.snowUnfreezeTemp)
         {
             if (world.getBlockId(i, j+1, k) == Block.snow.blockID)
             {

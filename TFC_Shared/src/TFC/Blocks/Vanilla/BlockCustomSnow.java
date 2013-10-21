@@ -216,7 +216,7 @@ public class BlockCustomSnow extends BlockTerra
                 }
             }
         }
-		else if(TFC_Climate.getHeightAdjustedTemp(par2, par3, par4) >= 0F)//Above fReezing
+		else if(TFC_Climate.getHeightAdjustedTemp(par2, par3, par4) >= 0F && TFC_Climate.getHeightAdjustedTemp(par2, par3, par4) >= TModOptions.snowUnfreezeTemp)//Above fReezing
 		{
 			if(meta > 0 ) {
 				par1World.setBlockMetadataWithNotify(par2, par3, par4, meta-1, 2);
