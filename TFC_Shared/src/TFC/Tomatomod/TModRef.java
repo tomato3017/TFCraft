@@ -6,7 +6,7 @@ public class TModRef
 {
 	
 	public static final int MAJOR_VERSION = 1;
-	public static final int MINOR_VERSION = 2;
+	public static final int MINOR_VERSION = 3;
 	public static final int REVISION_VERSION = 0;
 	public static final boolean IS_EXPERIMENTAL = false;
 	
